@@ -11,10 +11,13 @@ class GadgetsController < ApplicationController
   end
 
   def index
+    @gadgets = Gadget.all
+    @user = current_user
   end
 
   def show
     @gadget = Gadget.find(params[:id])
+    @user = @gadget.user
   end
   
   def destroy
