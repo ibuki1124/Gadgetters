@@ -5,8 +5,10 @@
     <p><%= @user.name %></p>
     <p><%= attachment_image_tag @user, :icon_image, fallback: "def_user.png", size: "100x100" %></p>
     <p><%= @user.introduction %></p>
-    <%= link_to "新規投稿", new_gadget_path %>
-    <%= link_to "プロフィール編集", edit_user_path(@user) %>
+    <% if @user == current_user %>
+      <%= link_to "新規投稿", new_gadget_path %>
+      <%= link_to "プロフィール編集", edit_user_path(@user) %>
+    <% end %>
   </div>
   <div>
     <h2>投稿</h2>
