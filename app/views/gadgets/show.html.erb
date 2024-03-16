@@ -1,2 +1,5 @@
-<h1>Gadgets#show</h1>
-<p>Find me in app/views/gadgets/show.html.erb</p>
+<main>
+  <p><%= @gadget.title %></p>
+  <p><%= @gadget.body %></p>
+  <p><%= attachment_image_tag @gadget, :gadget_image, fallback: "def_gadget.jpg" ,size: "300x300" %></p>
+</main>
