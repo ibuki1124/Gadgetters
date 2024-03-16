@@ -1,0 +1,49 @@
+<header>
+  <nav>
+    <a href="/">
+      <span>
+        Gadgetters
+      </span>
+    </a>
+    <ul>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to user_path(current_user) do %>
+            マイページ
+          <% end %>
+        </li>
+        <li>
+          <a href="/users">
+            ユーザ一覧
+          </a>
+        </li>
+        <li>
+          <a href="/gadgets">
+            ガジェット一覧
+          </a>
+        </li>
+        <li>
+          <a href="/users/sign_out" rel="nofollow" data-method="delete">
+            ログアウト
+          </a>
+        </li>
+      <% else %>
+        <li>
+          <a href="/">
+            トップ
+          </a>
+        </li>
+        <li>
+          <a href="/users/sign_up">
+            サインアップ
+          </a>
+        </li>
+        <li>
+          <a href="/users/sign_in">
+            ログイン
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

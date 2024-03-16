@@ -1,0 +1,20 @@
+<main>
+  <%= render "layouts/error_message", model: @user %>
+  <%= form_with model: @user, local: true do |f| %>
+    <div>
+      <%= f.label "名前", for: "user_name"%>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label "自己紹介", for: "user_introduction" %>
+      <%= f.text_area :introduction %>
+    </div>
+    <div>
+      <%= f.label "アイコン", for: "user_icon_image" %>
+      <%= f.attachment_field :icon_image %>
+    </div>
+    <div>
+      <%= f.submit "変更" %>
+    </div>
+  <% end %>
+</main>

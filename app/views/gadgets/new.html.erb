@@ -1,0 +1,21 @@
+<main>
+  <h2>新規投稿</h2>
+  <%= render "layouts/error_message", model: @gadget %>
+  <%= form_with model: @gadget, local: true do |f| %>
+    <div>
+      <%= f.label "タイトル", for: :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label "内容", for: :body %>
+      <%= f.text_area :body %>
+    </div>
+    <div>
+      <%= f.label "画像", for: :gadget_image%>
+      <%= f.attachment_field :gadget_image %>
+    </div>
+    <div>
+      <%= f.submit "投稿" %>
+    </div>
+  <% end %>
+</main>
