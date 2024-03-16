@@ -6,4 +6,7 @@ class User < ApplicationRecord
   attachment :icon_image
   
   has_many :gadgets, dependent: :destroy
+  
+  validates :name, presence: true, uniqueness: true, length: {maximum: 20}
+  validates :introduction, length: {maximum: 50}
 end

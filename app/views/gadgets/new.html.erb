@@ -1,5 +1,6 @@
 <main>
   <h2>新規投稿</h2>
+  <%= render "layouts/error_message", model: @gadget %>
   <%= form_with model: @gadget, local: true do |f| %>
     <div>
       <%= f.label "タイトル", for: :title %>
