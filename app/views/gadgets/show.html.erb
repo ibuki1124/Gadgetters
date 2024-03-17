@@ -1,12 +1,9 @@
-<main>
-  <p id="notice"><%= flash[:notice] %></p>
-  <%= render "users/profile", user: @user %>
-  <div>
-    <p><%= @gadget.title %></p>
-    <p><%= @gadget.body %></p>
-    <p><%= attachment_image_tag @gadget, :gadget_image, fallback: "def_gadget.jpg" ,size: "300x300" %></p>
-    <% if @user == current_user %>
-      <%= link_to "削除", gadget_path(@gadget), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-    <% end %>
-  </div>
-</main>
+<%= render "users/profile", user: @user %>
+<div>
+  <p><%= @gadget.title %></p>
+  <p><%= @gadget.body %></p>
+  <p><%= attachment_image_tag @gadget, :gadget_image, fallback: "def_gadget.jpg" ,size: "300x300" %></p>
+  <% if @user == current_user %>
+    <%= link_to "削除", gadget_path(@gadget), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <% end %>
+</div>

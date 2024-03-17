@@ -1,20 +1,17 @@
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col-11 col-sm-10 col-lg-8 col-xl-6 mx-auto mb-4">
-        <p id="notice"><%= flash[:notice] %></p>
-        <h1 class="mb-4">Gadgettersへようこそ！！</h1>
-        <p>気になる製品の情報を実際に使用した人から聞ける！</p>
-        <p>より良い製品を手に入れ生活を豊かにしよう！</p>
+<div class="container">
+  <div class="row">
+    <div class="col-11 col-sm-10 col-lg-8 col-xl-6 mx-auto mb-4">
+      <h1 class="mb-4">Gadgettersへようこそ！！</h1>
+      <p>気になる製品の情報を実際に使用した人から聞ける！</p>
+      <p>より良い製品を手に入れ生活を豊かにしよう！</p>
+    </div>
+  </div>
+  <% if !user_signed_in? %>
+    <div class="btn-wrapper mx-auto col-7 col-lg-5 col-xl-4">
+      <div class="row">
+        <a href="/users/sign_up" class="btn btn-info mr-auto btn-lg">サインアップ</a>
+        <a href="/users/sign_in" class="btn btn-success btn-lg">ログイン</a>
       </div>
     </div>
-    <% if !user_signed_in? %>
-      <div class="btn-wrapper mx-auto col-7 col-lg-5 col-xl-4">
-        <div class="row">
-          <a href="/users/sign_up" class="btn btn-info mr-auto btn-lg">サインアップ</a>
-          <a href="/users/sign_in" class="btn btn-success btn-lg">ログイン</a>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</main>
+  <% end %>
+</div>
