@@ -35,11 +35,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード（6文字以上）" %>
               </div>
-              <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
             </div>
           
             <div class="field form-group">
