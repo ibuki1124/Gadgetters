@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <span class="navbar-text mr-auto">
           <% if user_signed_in? %>
-            ログイン中：<%= @user.name %>
+            ログイン中：<%= current_user.name %>
           <% else %>
             ログインしていません
           <% end %>
