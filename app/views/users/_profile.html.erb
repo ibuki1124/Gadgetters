@@ -1,10 +1,16 @@
-<div>
-  <h2>プロフィール</h2>
-  <p><%= user.name %></p>
-  <p><%= attachment_image_tag user, :icon_image, fallback: "def_user.png", size: "100x100" %></p>
-  <p><%= user.introduction %></p>
+<div class="col-md-6 col-lg-3 mx-auto border-right">
+  <div class="text-center">
+    <h3>プロフィール</h3>
+    <hr>
+    <p><%= user.name %></p>
+    <p><%= attachment_image_tag user, :icon_image, fallback: "def_user.png", size: "100x100", class: "border" %></p>
+  </div>
+  <h4>自己紹介</h4>
+  <p><%= simple_format(h(user.introduction)) %></p>
   <% if user == current_user %>
-    <%= link_to "新規投稿", new_gadget_path %>
-    <%= link_to "プロフィール編集", edit_user_path(user) %>
+    <%= link_to edit_user_path(user), class: "btn btn-block btn-secondary mb-5 mt-3" do %>
+      <i class="fas fa-user-cog"></i>
+      プロフィール編集
+    <% end %>
   <% end %>
 </div>
