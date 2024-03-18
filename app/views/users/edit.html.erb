@@ -1,18 +1,53 @@
-<%= render "layouts/error_message", model: @user %>
-<%= form_with model: @user, local: true do |f| %>
-  <div>
-    <%= f.label "名前", for: "user_name"%>
-    <%= f.text_field :name %>
+<div class="container">
+  <div class="row">
+    <%= render "users/profile", user: @user %>
+    <div class="col-md-6 col-lg-8 mx-auto">
+      <h3>プロフィールの編集</h3>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto col-10 col-lg-8">
+            <div class="card ">
+              <div class="card-body">
+                <div class="row">
+                  <%= render "layouts/error_message", model: @user %>
+                </div>
+                <h2 class="card-title text-center mb-4 mt-1">編集内容</h2>
+                <hr>
+                <%= form_with model: @user, local: true do |f| %>
+                  <div class="field form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                      </div>
+                      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "お名前" %>
+                    </div>
+                  </div>
+                  <div class="field form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-info"></i> </span>
+                      </div>
+                      <%= f.text_area :introduction, class: "form-control", rows: "5",  placeholder: "自己紹介" %>
+                    </div>
+                  </div>
+                  <div class="field form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-file-image"></i> </span>
+                      </div>
+                      <%= f.attachment_field :icon_image, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit "変更", class:"btn btn-success btn-lg btn-block" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label "自己紹介", for: "user_introduction" %>
-    <%= f.text_area :introduction %>
-  </div>
-  <div>
-    <%= f.label "アイコン", for: "user_icon_image" %>
-    <%= f.attachment_field :icon_image %>
-  </div>
-  <div>
-    <%= f.submit "変更" %>
-  </div>
-<% end %>
+</div>
