@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <%= render "users/profile", user: @user %>
+    <div class="col-md-6 col-lg-8 mx-auto">
+      <h3>投稿<small class="text-secondary ml-3 fs-3 h5 text-decoration-underline"><u><%= gadgets.count %>件の投稿</u></small></h3>
+      <hr>
+      <div class="row">
+        <% gadgets.each do |gadget| %>
+          <div class="col-lg-6 mb-3">
+            <div class="card mx-auto shadow-lg">
+              <%= link_to gadget_path(gadget) do %>
+                <p><%= attachment_image_tag gadget, :gadget_image, fallback: "def_gadget.jpg" ,size: "300x300", class: "card-img-top" %></p>
+              <% end %>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-3">
+                    <%= link_to user_path(gadget.user) do %>
+                      <%= attachment_image_tag gadget.user, :icon_image, fallback: "def_user.png", size: "60x60", class: "rounded-circle" %>
+                    <% end %>
+                  </div>
+                  <div class="col-9">
+                    <p class="card-title text-truncate">
+                      <i class="fas fa-file-signature"></i>
+                      <%= gadget.title %>
+                    </p>
+                    <p class="card-text text-truncate">説明：<%= gadget.body %></p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <%= link_to "詳細", gadget_path(gadget), class: "btn btn-primary mt-2" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,49 +1,71 @@
-<header>
-  <nav>
-    <a href="/">
-      <span>
-        Gadgetters
-      </span>
-    </a>
-    <ul>
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to user_path(current_user) do %>
-            マイページ
+<header class="shadow" style="background-color: #A0B2B9;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <span>
+          <%= image_tag 'gadgetters_logo.png', class: "rounded-circle border", size: "50x50" %>
+          <%= image_tag 'gadgetters_title_logo.png', size: "140x40" %>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <span class="navbar-text mr-auto">
+          <% if user_signed_in? %>
+            ログイン中：<%= current_user.name %>
+          <% else %>
+            ログインしていません
           <% end %>
-        </li>
-        <li>
-          <a href="/users">
-            ユーザ一覧
-          </a>
-        </li>
-        <li>
-          <a href="/gadgets">
-            ガジェット一覧
-          </a>
-        </li>
-        <li>
-          <a href="/users/sign_out" rel="nofollow" data-method="delete">
-            ログアウト
-          </a>
-        </li>
-      <% else %>
-        <li>
-          <a href="/">
-            トップ
-          </a>
-        </li>
-        <li>
-          <a href="/users/sign_up">
-            サインアップ
-          </a>
-        </li>
-        <li>
-          <a href="/users/sign_in">
-            ログイン
-          </a>
-        </li>
-      <% end %>
-    </ul>
+        </span>
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to new_gadget_path, class: "nav-link text-dark" do %>
+                <i class="fa fa-pen"></i>
+                新規投稿
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to user_path(current_user), class: "nav-link text-dark" do %>
+                <i class="fas fa-address-card"></i>
+                マイページ
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <a href="/users" class="nav-link text-dark">
+                <i class="fas fa-users"></i>
+                ユーザ一覧
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/gadgets" class="nav-link text-dark">
+                <i class="fas fa-th"></i>
+                投稿一覧
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/sign_out" rel="nofollow" data-method="delete" class="nav-link text-dark">
+                <i class="fas fa-sign-out-alt"></i>
+                ログアウト
+              </a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a href="/users/sign_up" class="nav-link text-dark">
+                <i class="fas fa-user-plus"></i>
+                サインアップ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/sign_in" class="nav-link text-dark">
+                <i class="fas fa-sign-in-alt"></i>
+                ログイン
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
