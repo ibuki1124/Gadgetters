@@ -3,7 +3,7 @@
     <h3>プロフィール</h3>
     <hr>
     <p><%= user.name %></p>
-    <p><%= attachment_image_tag user, :icon_image, fallback: "def_user.png", size: "100x100", class: "border" %></p>
+    <p><%= attachment_image_tag user, :icon_image, fallback: "def_user.png", size: "150x150", class: "border" %></p>
   </div>
   <h4>自己紹介</h4>
   <p><%= simple_format(h(user.introduction)) %></p>

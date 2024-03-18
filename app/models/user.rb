@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :gadgets, dependent: :destroy
   
   validates :name, presence: true, uniqueness: true, length: {maximum: 15}
-  validates :introduction, length: {maximum: 50}
+  validates :introduction, length: {maximum: 200}
 end
