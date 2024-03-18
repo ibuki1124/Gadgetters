@@ -16,7 +16,7 @@
               <div class="card-body pt-0">
                 <div class="row">
                   <div class="col-3">
-                    <%= link_to user_path(user) do %>
+                    <%= link_to user_path(gadget.user) do %>
                       <%= attachment_image_tag gadget.user, :icon_image, fallback: "def_user.png", size: "60x60", class: "rounded-circle" %>
                     <% end %>
                   </div>
