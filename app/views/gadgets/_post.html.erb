@@ -2,9 +2,7 @@
   <div class="row">
     <%= render "users/profile", user: @user %>
     <div class="col-md-6 col-lg-8 mx-auto">
-      <div>
-        <h3 class="display-inline">投稿<small class="text-secondary ml-3 fs-3 h5"><%= gadgets.count %>件の投稿</small></h3>
-      </div>
+      <h3>投稿<small class="text-secondary ml-3 fs-3 h5"><%= gadgets.count %>件の投稿</small></h3>
       <hr>
       <div class="row">
         <% gadgets.each do |gadget| %>
