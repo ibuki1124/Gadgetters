@@ -13,12 +13,12 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fab fa-goodreads"></i> </span>
               </div>
-              <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトル" %>
+              <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトル", maxlength: "20" %>
             </div>
           </div>
           <div class="field form-group">
             <div class="input-group">
-              <%= f.text_area :body, class: "form-control", rows: "5", placeholder: "説明" %>
+              <%= f.text_area :body, class: "form-control", rows: "5", placeholder: "説明", maxlength: "400" %>
             </div>
           </div>
           <hr>

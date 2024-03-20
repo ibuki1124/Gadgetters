@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
     user_path(current_user)
   end
 
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
+
+  add_flash_types :success, :danger
+
   protected
 
   def configure_permitted_parameters

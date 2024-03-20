@@ -12,7 +12,7 @@
   <body>
     <%= render "layouts/header" %>
     <main>
-      <p id="notice"><%= flash[:notice] %></p>
+      <%= render "layouts/flash" %>
       <%= yield %>
     </main>
   </body>
