@@ -17,3 +17,11 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.field_with_errors {
+  display: inline-block;
+  flex-grow: 1;
+  input, textarea {
+    @extend .is-invalid;
+  }
+}
