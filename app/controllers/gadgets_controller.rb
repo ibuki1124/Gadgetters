@@ -7,7 +7,7 @@ class GadgetsController < ApplicationController
     @gadget = Gadget.new(gadget_params)
     @gadget.user_id = current_user.id
     if @gadget.save
-      redirect_to gadget_path(@gadget), notice: "投稿が正常に行われました"
+      redirect_to gadget_path(@gadget), success: "投稿が正常に行われました"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class GadgetsController < ApplicationController
   def destroy
     gadget = Gadget.find(params[:id])
     gadget.destroy
-    redirect_to user_path(current_user), notice: "投稿を削除しました"
+    redirect_to user_path(current_user), alert: "投稿を削除しました"
   end
   
   private
