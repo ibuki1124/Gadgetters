@@ -1,24 +1,9 @@
-# README
+# ガジェットのレビューサイト「Gadgetters」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsを使用し制作しました。  
+制作したサイトへのリンク  
+https://gadgetters.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+サイト内のロゴはAdobe Expressで制作しました。  
+制作したロゴ（Adobe Express）へのリンク  
+https://new.express.adobe.com/id/urn:aaid:sc:AP:c5ab073b-6c88-4219-b392-7e2ed44c7ef8?invite=true&promoid=Z2G1FQKR&mv=other
