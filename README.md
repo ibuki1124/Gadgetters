@@ -1,6 +1,10 @@
 # ガジェットのレビューサイト「Gadgetters」
 
 Ruby on Railsを使用し制作しました。  
+デプロイはAWSのEC2で行いました。  
+SSLの認証書の発行も済んでおります。  
+ドメインはお名前.comで取得しました。
+
 制作したサイトへのリンク  
 https://gadgetters.com/
 
