@@ -26,6 +26,10 @@
   }
 }
 
-body{
-  background-color: blue;
+.field_with_errors {
+  display: inline-block;
+  flex-grow: 1;
+  input, textarea {
+    @extend .is-invalid;
+  }
 }
