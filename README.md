@@ -1,24 +1,18 @@
-# README
+# ガジェットレビューサイト【Gadgetters】
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails を使用し、制作しました。  
+デプロイはAWS EC2で行いました。  
+SSLの認証書の発行も済んでおります。  
+ドメインはお名前.comで取得しました。
 
-Things you may want to cover:
+制作したサイトへのリンク  
+https://gadgettters.com/
 
-* Ruby version
+サイト内のロゴはAdobe Expressで制作しました。  
+制作したロゴ（Adobe Express）へのリンク  
+https://new.express.adobe.com/id/urn:aaid:sc:AP:c5ab073b-6c88-4219-b392-7e2ed44c7ef8?invite=true&promoid=Z2G1FQKR&mv=other
 
-* System dependencies
+### 未実装・未解決
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* パスワード再設定機能
+* フォーム送信時のエラーによるレイアウト崩れを修正したコードの本番環境への反映
